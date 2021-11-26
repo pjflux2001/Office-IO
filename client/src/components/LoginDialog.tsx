@@ -114,7 +114,7 @@ export default function LoginDialog() {
 
   return (
     <Wrapper>
-      <Title>Welcome to SkyOffice</Title>
+      <Title>Welcome to Office - IO</Title>
       <Content>
         <Left>
           <SubTitle>Select an avatar</SubTitle>
@@ -189,7 +189,7 @@ export default function LoginDialog() {
               setNameFieldEmpty(true)
             } else {
               if (connected) {
-                console.log('Join! Name:', name, 'Avatar:', avatars[avatarIndex].name)
+                console.log('Join! Name: ', name, ' Avatar:', avatars[avatarIndex].name)
                 const game = phaserGame.scene.keys.game as Game
                 game.registerKeys()
                 game.myPlayer.setPlayerName(name)

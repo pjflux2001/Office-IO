@@ -75,7 +75,6 @@ export default class PlayerSelector extends Phaser.GameObjects.Zone {
       this.setPosition(x, y + 32)
     } else if (cursors.space?.isDown) {
       init();
-      console.log("space")
     } else if (cursors.shift?.isDown) {
       console.log("shift")
     } 
