@@ -1,11 +1,11 @@
 # Office-IO
 
 ## Features
-### 1. Visitor Memo & Desk Status - loomSDK
-### 2. Proximity Video & Voice (distance-based interactive system) - WebRTC
-### 3. Flexible & Immediate Screen Sharing - WebRTC
-### 4. WhiteBoard - EraserJS
-### 5. Multifunctional Interactive Rooms 
+1. Visitor Memo & Desk Status - loomSDK<br>
+2. Proximity Video & Voice (distance-based interactive system) - WebRTC<br>
+3. Flexible & Immediate Screen Sharing - WebRTC<br>
+4. WhiteBoard - EraserJS<br>
+5. Multifunctional Interactive Rooms <br>
 
 ## Controls
 
