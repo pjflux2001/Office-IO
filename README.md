@@ -15,13 +15,13 @@
 
 ## Getting Started
 
-Step 1 : Clone repo.
-Step 2 : Let's install packages and start the server.
-Step 3 : ```npm install && npm run start``` .
-Step 4 : Let's install packages and start the client.
-Step 5 : ```cd client``` .
-Step 6 : ```npm install && npm run start``` .
-Step 7 : Visit http://localhost:3000 in your browser (chrome recommended).
+Step 1 : Clone repo. <br>
+Step 2 : Let's install packages and start the server.<br>
+Step 3 : ```npm install && npm run start``` .<br>
+Step 4 : Let's install packages and start the client.<br>
+Step 5 : ```cd client``` .<br>
+Step 6 : ```npm install && npm run start``` .<br>
+Step 7 : Visit http://localhost:3000 in your browser (chrome recommended).<br>
 
 ## Prerequisites
 
