@@ -36,6 +36,8 @@
     "@colyseus/arena": "^0.14.9",
     "@colyseus/command": "^0.1.7",
     "@colyseus/monitor": "^0.14.0",
+    "@loomhq/loom-embed": "^1.2.8",
+    "@loomhq/loom-sdk": "^2.21.2",
     "colyseus": "^0.14.0",
     "colyseus.js": "^0.14.12",
     "cors": "^2.8.5",
