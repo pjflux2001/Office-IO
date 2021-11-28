@@ -10,6 +10,9 @@ import { isSupported, setup } from "@loomhq/loom-sdk";
 const API_KEY = "17dee62d-9d46-4523-acc3-b7de86f6938f";
 const BUTTON_ID = "loom-sdk-button";
 
+// status arr
+var status_map = new Map()
+
 export default class PlayerSelector extends Phaser.GameObjects.Zone {
   selectedItem?: Item
 
@@ -28,6 +31,7 @@ export default class PlayerSelector extends Phaser.GameObjects.Zone {
     if (player.playerBehavior === PlayerBehavior.SITTING) {
       return
     }
+
 
     // loomSDK
   async function init() {
@@ -57,8 +61,11 @@ export default class PlayerSelector extends Phaser.GameObjects.Zone {
           element: button
       });
       sdkButton.on("insert-click", async video => {
-          console.log(video)
-          console.log(video.embedUrl)
+          status_map.set(player.playerId,video.embedUrl)
+          let d_e = document.getElementsByClassName('icon-button__badge') as HTMLCollectionOf<HTMLElement>
+          
+          d_e[0].style.display = 'block'
+          d_e[0].innerText = '' + status_map.size
       });
       
   }
@@ -76,7 +83,15 @@ export default class PlayerSelector extends Phaser.GameObjects.Zone {
     } else if (cursors.space?.isDown) {
       init();
     } else if (cursors.shift?.isDown) {
-      console.log("shift")
+      if(status_map.size > 0) {
+        status_map.forEach (function(value, key) {
+          window.open(value, '_blank')
+          status_map.delete(key)
+        })
+        let d_e = document.getElementsByClassName('icon-button__badge') as HTMLCollectionOf<HTMLElement>
+        d_e[0].innerText = ''
+        d_e[0].style.display = 'none'
+      }
     } 
 
     // while currently selecting an item,

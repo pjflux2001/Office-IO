@@ -14,6 +14,8 @@ Office Instantly Online
 - `arrow keys` to move (video chat will start if you are close to someone else)
 - `E` to sit down
 - `R` to use computer (for screen sharing)
+- `Space` to make an status update
+- `Shift` to view all status updates (including your own)
 
 ## Getting Started
 

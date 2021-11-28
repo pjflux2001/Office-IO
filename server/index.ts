@@ -3,6 +3,12 @@ import express from 'express'
 import cors from 'cors'
 import { Server } from 'colyseus'
 import { monitor } from '@colyseus/monitor'
+// import * as fs from 'fs';
+
+// const options = {
+//   key: fs.readFileSync('../key.pem'),
+//   cert: fs.readFileSync('../cert.pem')
+// };
 
 // import socialRoutes from "@colyseus/social/express"
 
