@@ -34,11 +34,14 @@ You'll need [Node.js](https://nodejs.org/en/), [npm](https://www.npmjs.com/) ins
 ## Built with
 
 - [loomSDK](https://www.loom.com/sdk) - Async Video
+- [FireBase](https://firebase.google.com/) - Realtime Databse
+- [React](https://reactjs.org/) - Frontend Javascript Library
 - [Phaser3](https://github.com/photonstorm/phaser) - Game Engine
 - [Colyseus](https://github.com/colyseus/colyseus) - WebSocket-based Server Framework
 - [React/Redux](https://github.com/facebook/react) - Front-end Framework
 - [PeerJS](https://github.com/peers/peerjs) - WebRTC for Video/screen sharing
 - [TypeScript](https://github.com/microsoft/TypeScript) and [ES6](https://github.com/eslint/eslint) - for both client and server sides
+- [NodeJS](https://nodejs.org/en/) - JavaScript runtime
 
 ## License
 
