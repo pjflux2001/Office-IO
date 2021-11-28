@@ -33,6 +33,7 @@ You'll need [Node.js](https://nodejs.org/en/), [npm](https://www.npmjs.com/) ins
 
 ## Built with
 
+- [loomSDK](https://www.loom.com/sdk) - Async Video
 - [Phaser3](https://github.com/photonstorm/phaser) - Game Engine
 - [Colyseus](https://github.com/colyseus/colyseus) - WebSocket-based Server Framework
 - [React/Redux](https://github.com/facebook/react) - Front-end Framework
