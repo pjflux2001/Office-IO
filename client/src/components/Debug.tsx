@@ -1,25 +1,25 @@
-import React /*, { useState }*/ from 'react'
-import TextField from '@mui/material/TextField'
+import React /*, { useState }*/ from "react";
+import TextField from "@mui/material/TextField";
 // import IconButton from '@mui/material/IconButton'
 // import Button from '@mui/material/Button'
 // import DeleteIcon from '@mui/icons-material/Delete'
-import { useAppSelector /*, useAppDispatch */ } from '../hooks'
+import { useAppSelector /*, useAppDispatch */ } from "../hooks";
 // import { decrement, increment } from '../stores/UserStore'
 
-import styled from 'styled-components'
-import phaserGame from '../PhaserGame'
-import Game from '../scenes/Game'
+import styled from "styled-components";
+import phaserGame from "../PhaserGame";
+import Game from "../scenes/Game";
 
 const Wrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-`
+`;
 
 export default function Video() {
   // const [showVideo, setShowVideo] = useState<boolean>(false)
   // const [videos, setVideos] = useState<string[]>([])
-  const sessionId = useAppSelector((state) => state.user.sessionId)
+  const sessionId = useAppSelector((state) => state.user.sessionId);
   // const dispatch = useAppDispatch()
 
   return (
@@ -63,9 +63,9 @@ export default function Video() {
           label="PlayerName"
           variant="outlined"
           onInput={(e) => {
-            const text = (e.target as HTMLInputElement).value
-            const game = phaserGame.scene.keys.game as Game
-            game.myPlayer.setPlayerName(text)
+            const text = (e.target as HTMLInputElement).value;
+            const game = phaserGame.scene.keys.game as Game;
+            game.myPlayer.setPlayerName(text);
           }}
         />
 
@@ -89,5 +89,5 @@ export default function Video() {
       ))} */}
       </Wrapper>
     </>
-  )
+  );
 }

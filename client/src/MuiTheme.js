@@ -1,15 +1,15 @@
-import { createTheme } from '@mui/material/styles'
+import { createTheme } from "@mui/material/styles";
 
 const muiTheme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: "dark",
     primary: {
-      main: '#426dea',
+      main: "#426dea",
     },
     secondary: {
-      main: '#42eacb',
+      main: "#42eacb",
     },
   },
-})
+});
 
-export default muiTheme
+export default muiTheme;

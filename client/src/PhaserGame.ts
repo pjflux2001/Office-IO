@@ -1,11 +1,11 @@
-import Phaser from 'phaser'
-import Game from './scenes/Game'
-import Preloader from './scenes/Preloader'
+import Phaser from "phaser";
+import Game from "./scenes/Game";
+import Preloader from "./scenes/Preloader";
 
 const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
-  parent: 'phaser-container',
-  backgroundColor: '#CFF5FC',
+  parent: "phaser-container",
+  backgroundColor: "#CFF5FC",
   pixelArt: true, // Prevent pixel art from becoming blurred when scaled.
   scale: {
     mode: Phaser.Scale.ScaleModes.RESIZE,
@@ -17,7 +17,7 @@ const config: Phaser.Types.Core.GameConfig = {
     // },
   },
   physics: {
-    default: 'arcade',
+    default: "arcade",
     arcade: {
       gravity: { y: 0 },
       debug: false,
@@ -25,10 +25,10 @@ const config: Phaser.Types.Core.GameConfig = {
   },
   autoFocus: true,
   scene: [Preloader, Game],
-}
+};
 
-const phaserGame = new Phaser.Game(config)
+const phaserGame = new Phaser.Game(config);
 
-;(window as any).game = phaserGame
+(window as any).game = phaserGame;
 
-export default phaserGame
+export default phaserGame;

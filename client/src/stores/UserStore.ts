@@ -1,10 +1,10 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { sanitizeId } from '../util'
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { sanitizeId } from "../util";
 
 export const userSlice = createSlice({
-  name: 'user',
+  name: "user",
   initialState: {
-    sessionId: '',
+    sessionId: "",
     connected: false,
     videoConnected: false,
     videoConnectionWarning: true,
@@ -13,28 +13,34 @@ export const userSlice = createSlice({
   },
   reducers: {
     setSessionId: (state, action: PayloadAction<string>) => {
-      state.sessionId = action.payload
+      state.sessionId = action.payload;
     },
     setConnected: (state, action: PayloadAction<boolean>) => {
-      state.connected = action.payload
+      state.connected = action.payload;
     },
     setVideoConnected: (state, action: PayloadAction<boolean>) => {
-      state.videoConnected = action.payload
+      state.videoConnected = action.payload;
     },
     setLoggedIn: (state, action: PayloadAction<boolean>) => {
-      state.loggedIn = action.payload
+      state.loggedIn = action.payload;
     },
-    setPlayerNameMap: (state, action: PayloadAction<{ id: string; name: string }>) => {
-      state.playerNameMap.set(sanitizeId(action.payload.id), action.payload.name)
+    setPlayerNameMap: (
+      state,
+      action: PayloadAction<{ id: string; name: string }>
+    ) => {
+      state.playerNameMap.set(
+        sanitizeId(action.payload.id),
+        action.payload.name
+      );
     },
     removePlayerNameMap: (state, action: PayloadAction<string>) => {
-      state.playerNameMap.delete(sanitizeId(action.payload))
+      state.playerNameMap.delete(sanitizeId(action.payload));
     },
     closeVideoConnectionWarning: (state) => {
-      state.videoConnectionWarning = false
+      state.videoConnectionWarning = false;
     },
   },
-})
+});
 
 export const {
   setSessionId,
@@ -44,6 +50,6 @@ export const {
   setPlayerNameMap,
   removePlayerNameMap,
   closeVideoConnectionWarning,
-} = userSlice.actions
+} = userSlice.actions;
 
-export default userSlice.reducer
+export default userSlice.reducer;

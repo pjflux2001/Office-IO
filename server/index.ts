@@ -1,8 +1,8 @@
-import http from 'http'
-import express from 'express'
-import cors from 'cors'
-import { Server } from 'colyseus'
-import { monitor } from '@colyseus/monitor'
+import http from "http";
+import express from "express";
+import cors from "cors";
+import { Server } from "colyseus";
+import { monitor } from "@colyseus/monitor";
 // import * as fs from 'fs';
 
 // const options = {
@@ -12,22 +12,22 @@ import { monitor } from '@colyseus/monitor'
 
 // import socialRoutes from "@colyseus/social/express"
 
-import { SkyOffice } from './rooms/SkyOffice'
+import { SkyOffice } from "./rooms/SkyOffice";
 
-const port = Number(process.env.PORT || 2567)
-const app = express()
+const port = Number(process.env.PORT || 2567);
+const app = express();
 
-app.use(cors())
-app.use(express.json())
+app.use(cors());
+app.use(express.json());
 // app.use(express.static('dist'))
 
-const server = http.createServer(app)
+const server = http.createServer(app);
 const gameServer = new Server({
   server,
-})
+});
 
 // register your room handlers
-gameServer.define('skyoffice', SkyOffice)
+gameServer.define("skyoffice", SkyOffice);
 
 /**
  * Register @colyseus/social routes
@@ -38,7 +38,7 @@ gameServer.define('skyoffice', SkyOffice)
 // app.use("/", socialRoutes);
 
 // register colyseus monitor AFTER registering your room handlers
-app.use('/colyseus', monitor())
+app.use("/colyseus", monitor());
 
-gameServer.listen(port)
-console.log(`Listening on ws://localhost:${port}`)
+gameServer.listen(port);
+console.log(`Listening on ws://localhost:${port}`);

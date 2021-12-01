@@ -1,13 +1,13 @@
-import React from 'react'
-import styled from 'styled-components'
-import Button from '@mui/material/Button'
-import IconButton from '@mui/material/IconButton'
-import CloseIcon from '@mui/icons-material/Close'
+import React from "react";
+import styled from "styled-components";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
 
-import { useAppSelector, useAppDispatch } from '../hooks'
-import { closeComputerDialog } from '../stores/ComputerStore'
+import { useAppSelector, useAppDispatch } from "../hooks";
+import { closeComputerDialog } from "../stores/ComputerStore";
 
-import Video from './Video'
+import Video from "./Video";
 
 const Backdrop = styled.div`
   position: fixed;
@@ -17,7 +17,7 @@ const Backdrop = styled.div`
   height: 100vh;
   overflow: hidden;
   padding: 16px 180px 16px 16px;
-`
+`;
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
@@ -34,7 +34,7 @@ const Wrapper = styled.div`
     top: 16px;
     right: 16px;
   }
-`
+`;
 
 const VideoGrid = styled.div`
   flex: 1;
@@ -71,7 +71,7 @@ const VideoGrid = styled.div`
       white-space: nowrap;
     }
   }
-`
+`;
 
 function VideoContainer({ playerName, stream }) {
   return (
@@ -79,15 +79,17 @@ function VideoContainer({ playerName, stream }) {
       <Video srcObject={stream} autoPlay></Video>
       {playerName && <div className="player-name">{playerName}</div>}
     </div>
-  )
+  );
 }
 
 export default function ComputerDialog() {
-  const dispatch = useAppDispatch()
-  const playerNameMap = useAppSelector((state) => state.user.playerNameMap)
-  const shareScreenManager = useAppSelector((state) => state.computer.shareScreenManager)
-  const myStream = useAppSelector((state) => state.computer.myStream)
-  const peerStreams = useAppSelector((state) => state.computer.peerStreams)
+  const dispatch = useAppDispatch();
+  const playerNameMap = useAppSelector((state) => state.user.playerNameMap);
+  const shareScreenManager = useAppSelector(
+    (state) => state.computer.shareScreenManager
+  );
+  const myStream = useAppSelector((state) => state.computer.myStream);
+  const peerStreams = useAppSelector((state) => state.computer.peerStreams);
 
   return (
     <Backdrop>
@@ -106,13 +108,13 @@ export default function ComputerDialog() {
             color="secondary"
             onClick={() => {
               if (shareScreenManager?.myStream) {
-                shareScreenManager?.stopScreenShare()
+                shareScreenManager?.stopScreenShare();
               } else {
-                shareScreenManager?.startScreenShare()
+                shareScreenManager?.startScreenShare();
               }
             }}
           >
-            {shareScreenManager?.myStream ? 'Stop sharing' : 'Share Screen'}
+            {shareScreenManager?.myStream ? "Stop sharing" : "Share Screen"}
           </Button>
         </div>
 
@@ -120,11 +122,17 @@ export default function ComputerDialog() {
           {myStream && <VideoContainer stream={myStream} playerName="You" />}
 
           {[...peerStreams.entries()].map(([id, { stream }]) => {
-            const playerName = playerNameMap.get(id)
-            return <VideoContainer key={id} playerName={playerName} stream={stream} />
+            const playerName = playerNameMap.get(id);
+            return (
+              <VideoContainer
+                key={id}
+                playerName={playerName}
+                stream={stream}
+              />
+            );
           })}
         </VideoGrid>
       </Wrapper>
     </Backdrop>
-  )
+  );
 }
